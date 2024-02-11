@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Poppins,Orbitron } from "next/font/google";
 import "./globals.css";
 
-// const inter = Poppins({ weight: "400", subsets: ["latin"] });
+const poppins = Poppins({ weight: "400", subsets: ["latin"] });
 const orbitron = Orbitron({ weight: "400", subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -17,7 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={orbitron.className}>{children}</body>
+      <body className={poppins.className}>{children}</body>
     </html>
   );
 }

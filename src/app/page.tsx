@@ -50,7 +50,7 @@ export default function Home() {
   ];
 
   return (
-    <div className="styled-scrollbar">
+    <div className="styled-scrollbar ">
       <nav
         className={`bg-[#212529] h-18 max-w-screen flex py-4 px-8 justify-between items-center max-h-screen sticky top-0  ${orbitron.className} z-10`}
       >

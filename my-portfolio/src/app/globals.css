@@ -160,6 +160,7 @@ body::-webkit-scrollbar-thumb {
   transform: rotateX(-90deg);
   transform-origin: bottom;
   transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  z-index: 100;
 }
 
 .card:hover .card__content {
@@ -183,7 +184,6 @@ body::-webkit-scrollbar-thumb {
   color: #777;
   line-height: 1.4;
 }
-
 
 .main {
   display: flex;
@@ -263,8 +263,9 @@ body::-webkit-scrollbar-thumb {
   border: none;
   background: white;
   border-radius: 5px 5px 90px 5px;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
-  transition: .2s ease-in-out;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  transition: 0.2s ease-in-out;
 }
 
 .instagram {

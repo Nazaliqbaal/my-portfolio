@@ -1,5 +1,5 @@
 import { Poppins, Orbitron } from "next/font/google";
-import { Github, Phone,Mail } from "lucide-react";
+import { Github, Phone, Mail } from "lucide-react";
 import Link from "next/link";
 // import { ArrowDown } from "lucide-react";
 import Image from "next/image";
@@ -118,17 +118,18 @@ export default function Home() {
           <div className="flex justify-around mt-16 items-center text-2xl">
             <div className="w-3/5">
               <h3>
-                Hello! My name is Nazal from Kasaragod, Kerala. I completed my
-                Bachelor of Engineering in Computer Science from P.A College of
-                Engineering. I enjoy creating things for mobile and web. My
-                interest in development and computer science began back in 2016
-                when I was tinkering with how to build RC controlled cars. After
-                some Googling, I started to learn C++, which taught me a great
-                deal about fundamental principles of programming and how to
-                construct complex logic. I am rapidly advancing my skills today
-                by developing applications and designing intuitive user
-                interfaces for mobile using Flutter, as well as using web
-                technologies for web development.
+                Hello! My name is Nazal Mohammed Iqbal. I completed my college
+                education at PA College of Engineering, specializing in Computer
+                Science Engineering. My journey into web development began with
+                the excitement of building small websites using HTML and CSS,
+                which eventually sparked my passion for pursuing a career as a
+                web developer. Currently, I am employed as a web developer at
+                Codecraft Technology, where I have had the opportunity to work
+                on multiple projects, honing my skills in various technologies
+                including React, Next.js, Angular, .NET, and delving into
+                Node.js and Nest.js. I am passionate about crafting innovative
+                solutions and leveraging technology to create impactful digital
+                experiences.
               </h3>
             </div>
             <div className="flex justify-center items-center w-2/5">
@@ -146,20 +147,31 @@ export default function Home() {
           <h1 className="text-center text-5xl" id="headings">
             My Projects
           </h1>
-          <div className="flex flex-wrap gap-4 mt-16">
+          <div className="flex flex-wrap gap-6 mt-16">
             {cardData.map((card) => (
               <div key={card.id} className="card">
                 <div
                   className="max-w-sm rounded-lg bg-white p-6 shadow-lg dark:bg-neutral-700 w-full h-full bg-cover flex items-center justify-center relative"
                   style={{
                     backgroundImage: `url('${card.backgroundImage}')`,
-                    filter: "blur(5px)",
+                    position: "relative", // Ensure proper stacking context
                   }}
                 >
-                  <h5 className="mb-2 text-xl font-medium leading-tight text-neutral-800 dark:text-neutral-50">
+                  {/* Blur overlay */}
+                  <div
+                    className="absolute inset-0 blur"
+                    style={{
+                      // background: "rgba(255, 255, 255, 0.5)", // Adjust the color and opacity as needed
+                      backdropFilter: "blur(5px)", // Apply blur effect
+                      zIndex: 1, // Ensure the overlay is behind the text
+                    }}
+                  ></div>
+                  {/* Title */}
+                  <h5 className="z-10 mb-2 text-xl font-bold leading-tight text-neutral-800 dark:text-cyan-600">
                     {card.title}
                   </h5>
                 </div>
+
                 <div className="card__content">
                   <p className="card__title">{card.title}</p>
                   <p className="card__description flex flex-col gap-4">
@@ -183,11 +195,14 @@ export default function Home() {
             <div className="space-y-8">
               <h1 className="text-3xl">You can contact me at</h1>
               <div className="flex gap-3">
-                <Phone/>
+                <Phone />
                 +91 6282810365
               </div>
-              <Link className="flex gap-3" href="mailto:nazaliqbal786@gmail.com">
-                <Mail/>
+              <Link
+                className="flex gap-3"
+                href="mailto:nazaliqbal786@gmail.com"
+              >
+                <Mail />
                 nazaliqbal786@gmail.com
               </Link>
             </div>

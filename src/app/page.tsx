@@ -55,7 +55,7 @@ export default function Home() {
         className={`bg-[#212529] h-18 max-w-screen flex py-4 px-8 justify-between items-center max-h-screen sticky top-0  ${orbitron.className} z-10`}
       >
         <div className="flex gap-3 items-center justify-center cursor-pointer">
-          <h2 style={{ letterSpacing: "8px" }}>NAZAL IQBAL</h2>
+          <h2 className="text-white tracking-wide">NAZAL IQBAL</h2>
           <div className="spinner">
             <span></span>
             <span></span>
@@ -151,7 +151,7 @@ export default function Home() {
             {cardData.map((card) => (
               <div key={card.id} className="card">
                 <div
-                  className="max-w-sm rounded-lg bg-white p-6 shadow-lg dark:bg-neutral-700 w-full h-full bg-cover flex items-center justify-center relative"
+                  className="max-w-sm rounded-lg bg-white p-6 shadow-lg  w-full h-full bg-cover flex items-center justify-center relative"
                   style={{
                     backgroundImage: `url('${card.backgroundImage}')`,
                     position: "relative", // Ensure proper stacking context
@@ -167,7 +167,7 @@ export default function Home() {
                     }}
                   ></div>
                   {/* Title */}
-                  <h5 className="z-10 mb-2 text-xl font-bold leading-tight text-neutral-800 dark:text-cyan-600">
+                  <h5 className="z-10 mb-2 text-xl font-bold leading-tight text-cyan-600">
                     {card.title}
                   </h5>
                 </div>

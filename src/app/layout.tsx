@@ -17,7 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={poppins.className} style={{ backgroundColor: "black" }}>
+      <body className={poppins.className}>
         {children}
       </body>
     </html>

@@ -11,7 +11,7 @@ export default function Home() {
   const menuItems = [
     { id: 1, text: "ABOUT", href: "#about" },
     { id: 2, text: "PROJECTS", href: "#projects" },
-    { id: 3, text: "CONTACT", href: "#contact" },
+    { id: 3, text: "CONTACTS", href: "#contacts" },
   ];
 
   const cardData = [
@@ -111,7 +111,7 @@ export default function Home() {
 
         {/* About Section */}
 
-        <section id="about" className="mt-20">
+        <section id="about" className=" pt-28">
           <h1 className="text-center text-5xl" id="headings">
             About Me
           </h1>
@@ -143,7 +143,7 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section id="projects" className="mt-20">
+        <section id="projects" className="pt-28">
           <h1 className="text-center text-5xl" id="headings">
             My Projects
           </h1>
@@ -184,7 +184,7 @@ export default function Home() {
             ))}
           </div>
         </section>
-        <section id="contact" className="mt-20">
+        <section id="contacts" className="pt-28">
           <h1 className="text-center text-5xl" id="headings">
             Contacts
           </h1>
@@ -251,22 +251,13 @@ export default function Home() {
                     viewBox="0,0,256,256"
                     width="30px"
                     height="30px"
-                    fill-rule="nonzero"
                     className="instagram"
                   >
                     <g
-                      fill-rule="nonzero"
-                      stroke="none"
-                      stroke-width="1"
-                      stroke-linecap="butt"
-                      stroke-linejoin="miter"
-                      stroke-miterlimit="10"
-                      stroke-dasharray=""
-                      stroke-dashoffset="0"
-                      font-family="none"
-                      font-weight="none"
-                      font-size="none"
-                      text-anchor="none"
+                      fontFamily="none"
+                      fontWeight="none"
+                      fontSize="none"
+                      textAnchor="none"
                       style={{ mixBlendMode: "normal" }}
                     >
                       <g transform="scale(8,8)">

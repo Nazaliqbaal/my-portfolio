@@ -55,7 +55,7 @@ export default function Home() {
         className={`bg-[#212529] h-18 max-w-screen flex py-4 px-8 justify-between items-center max-h-screen sticky top-0  ${orbitron.className} z-10`}
       >
         <div className="flex gap-3 items-center justify-center cursor-pointer">
-          <h2 className="text-white tracking-[.25em]">NAZAL IQBAL</h2>
+          <h2 className="text-white tracking-[.3em]">NAZAL IQBAL</h2>
           <div className="spinner">
             <span></span>
             <span></span>

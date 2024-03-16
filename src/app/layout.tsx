@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
-import { Poppins, Orbitron } from "next/font/google";
+import { Poppins } from "next/font/google";
 import "./globals.css";
 
-const poppins = Poppins({ weight: "400", subsets: ["latin"] });
-const orbitron = Orbitron({ weight: "400", subsets: ["latin"] });
+const poppins = Poppins({ weight: "400", subsets: ["latin"], preload: true });
 
 export const metadata: Metadata = {
   title: "Nazal's Portfolio",

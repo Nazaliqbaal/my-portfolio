@@ -1,10 +1,8 @@
-import { Poppins, Orbitron } from "next/font/google";
-import { Github, Phone, Mail } from "lucide-react";
+import { Orbitron } from "next/font/google";
+import { Phone, Mail } from "lucide-react";
 import Link from "next/link";
-// import { ArrowDown } from "lucide-react";
 import Image from "next/image";
 
-// const poppins = Poppins({ weight: "400", subsets: ["latin"] });
 const orbitron = Orbitron({ weight: "400", subsets: ["latin"], preload: true });
 
 export default function Home() {

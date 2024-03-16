@@ -164,21 +164,21 @@ export default function Home() {
                       zIndex: 1,
                     }}
                   ></div>
-                  <h5 className="z-10 mb-2 text-xl font-bold leading-tight text-cyan-600">                
+                  <h5 className="z-10 mb-2 text-xl font-bold leading-tight text-cyan-600">
                     {card.title}
                   </h5>
                 </div>
 
                 <div className="card__content">
                   <p className="card__title">{card.title}</p>
-                  <p className="card__description flex flex-col gap-4">
+                  <div className="card__description flex flex-col gap-4">
                     <div>{card.description}</div>
                     <div className="bg-green-400 flex p-2 items-center justify-center">
                       <Link href={card.demoLink} className="hover:underline">
                         See Demo
                       </Link>
                     </div>
-                  </p>
+                  </div>
                 </div>
               </div>
             ))}

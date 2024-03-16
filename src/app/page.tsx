@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 // const poppins = Poppins({ weight: "400", subsets: ["latin"] });
-const orbitron = Orbitron({ weight: "400", subsets: ["latin"] });
+const orbitron = Orbitron({ weight: "400", subsets: ["latin"], preload: true });
 
 export default function Home() {
   const menuItems = [

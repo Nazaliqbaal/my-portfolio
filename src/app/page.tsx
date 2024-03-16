@@ -52,10 +52,10 @@ export default function Home() {
   return (
     <div className="styled-scrollbar ">
       <nav
-        className={`dark:bg-[#212529] h-18 max-w-screen flex py-4 px-8 justify-between items-center max-h-screen sticky top-0  ${orbitron.className} z-10`}
+        className={`bg-[#212529] h-18 max-w-screen flex py-4 px-8 justify-between items-center max-h-screen sticky top-0  ${orbitron.className} z-10`}
       >
         <div className="flex gap-3 items-center justify-center cursor-pointer">
-          <h2 className="text-white tracking-wide">NAZAL IQBAL</h2>
+          <h2 className="text-white tracking-widest">NAZAL IQBAL</h2>
           <div className="spinner">
             <span></span>
             <span></span>

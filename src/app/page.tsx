@@ -76,7 +76,7 @@ export default function Home() {
     before:transition before:ease-in-out before:duration-300"
             >
               <Link href={item.href}>
-                <a>{item.text}</a>
+                <span>{item.text}</span>
               </Link>
             </li>
           ))}

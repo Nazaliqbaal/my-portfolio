@@ -75,7 +75,9 @@ export default function Home() {
     before:hover:scale-x-100 before:scale-x-0 before:origin-top-left
     before:transition before:ease-in-out before:duration-300"
             >
-              <Link href={item.href}>{item.text}</Link>
+              <Link href={item.href}>
+                <a>{item.text}</a>
+              </Link>
             </li>
           ))}
         </ul>

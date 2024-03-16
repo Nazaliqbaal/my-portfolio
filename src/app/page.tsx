@@ -124,12 +124,12 @@ export default function Home() {
                 the excitement of building small websites using HTML and CSS,
                 which eventually sparked my passion for pursuing a career as a
                 web developer. Currently, I am employed as a web developer at
-                Codecraft Technology, where I have had the opportunity to work
-                on multiple projects, honing my skills in various technologies
-                including React, Next.js, Angular, .NET, and delving into
-                Node.js and Nest.js. I am passionate about crafting innovative
-                solutions and leveraging technology to create impactful digital
-                experiences.
+                Codecraft Technologies, Mangalore, where I have had the
+                opportunity to work on multiple projects, honing my skills in
+                various technologies including React, Next.js, Angular, .NET,
+                and delving into Node.js and Nest.js. I am passionate about
+                crafting innovative solutions and leveraging technology to
+                create impactful digital experiences.
               </h3>
             </div>
             <div className="flex justify-center items-center w-2/5">
@@ -154,20 +154,17 @@ export default function Home() {
                   className="max-w-sm rounded-lg bg-white p-6 shadow-lg  w-full h-full bg-cover flex items-center justify-center relative"
                   style={{
                     backgroundImage: `url('${card.backgroundImage}')`,
-                    position: "relative", // Ensure proper stacking context
+                    position: "relative",
                   }}
                 >
-                  {/* Blur overlay */}
                   <div
                     className="absolute inset-0 blur"
                     style={{
-                      // background: "rgba(255, 255, 255, 0.5)", // Adjust the color and opacity as needed
-                      backdropFilter: "blur(5px)", // Apply blur effect
-                      zIndex: 1, // Ensure the overlay is behind the text
+                      backdropFilter: "blur(5px)",
+                      zIndex: 1,
                     }}
                   ></div>
-                  {/* Title */}
-                  <h5 className="z-10 mb-2 text-xl font-bold leading-tight text-cyan-600">
+                  <h5 className="z-10 mb-2 text-xl font-bold leading-tight text-cyan-600">                
                     {card.title}
                   </h5>
                 </div>

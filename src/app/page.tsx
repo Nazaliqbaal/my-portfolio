@@ -82,7 +82,7 @@ export default function Home() {
           ))}
         </ul>
       </nav>
-      <main className="p-24 scroll-smooth bg-purple-400">
+      <main className="p-24 scroll-smooth bg-[#0a0908]">
         <section className="text-lg">
           <div className="space-y-2 mb-14">
             <p className="text-2xl font-poppins">Hi, I am</p>

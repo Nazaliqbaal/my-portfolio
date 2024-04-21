@@ -151,7 +151,7 @@ export default function Home() {
 
         {/* About Section */}
 
-        <section id="about" className=" pt-28">
+        <section id="about" className="p-20 md:pt-28">
           <h1 className=" text-center text-5xl" id="headings">
             About Me
           </h1>

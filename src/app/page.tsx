@@ -155,7 +155,7 @@ export default function Home() {
           <h1 className=" text-center text-5xl" id="headings">
             About Me
           </h1>
-          <div className="flex flex-col-reverse md:flex-row gap-4 justify-around mt-16 items-center text-xl">
+          <div className="flex flex-col-reverse md:flex-row gap-8 justify-around mt-16 items-center text-xl">
             <div className="text-lg md:w-3/5">
               <h3>
                 Hello! My name is Nazal Mohammed Iqbal. I completed my college

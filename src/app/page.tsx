@@ -172,11 +172,11 @@ export default function Home() {
                 create impactful digital experiences.
               </h3>
             </div>
-            <div className="flex justify-center items-center w-2/5">
+            <div className="flex justify-center items-center md:w-2/5 ">
               <Image
-                src="https://github.com/shadcn.png"
-                width={400}
-                height={400}
+                src="/me.jpg"
+                width={300}
+                height={10}
                 alt="My pic"
                 className="rounded-full"
               />
@@ -274,7 +274,7 @@ export default function Home() {
                 </Link>
               </div>
               <div className="down">
-                <Link className="card3" href="https://github.com/Nazaliqbaal">
+                <Link className="card3" href="/truth-dare-bg.png">
                   <svg
                     className="github"
                     height="30px"

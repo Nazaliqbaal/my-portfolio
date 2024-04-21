@@ -108,10 +108,10 @@ export default function Home() {
         </ul>
       </nav>
       {isOpen && (
-        <div className="bg-black fixed top-16 left-0 right-0 p-4 block md:hidden z-50">
+        <div className="bg-black fixed top-16 left-0 right-0 p-4 block md:hidden z-50 opacity-90">
           <ul className="text-white flex flex-col gap-4 justify-center cursor-pointer text-sm tracking-wider text-center">
             {menuItems.map((item) => (
-              <li key={item.id} className="hover:scale-105">
+              <li key={item.id} className="hover:scale-105 duration-200">
                 <Link href={item.href}>
                   <span>{item.text}</span>
                 </Link>

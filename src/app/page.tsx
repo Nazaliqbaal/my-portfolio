@@ -1,11 +1,20 @@
+"use client";
+
 import { Orbitron } from "next/font/google";
 import { Phone, Mail } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
+import { useState } from "react";
 
 const orbitron = Orbitron({ weight: "400", subsets: ["latin"], preload: true });
 
 export default function Home() {
+  const [isOpen, setIsOpen] = useState(false);
+  console.log(isOpen);
+
+  const handleClick = () => {
+    setIsOpen(!isOpen);
+  };
   const menuItems = [
     { id: 1, text: "ABOUT", href: "#about" },
     { id: 2, text: "PROJECTS", href: "#projects" },
@@ -50,10 +59,10 @@ export default function Home() {
   return (
     <div className="styled-scrollbar ">
       <nav
-        className={`bg-[#212529] h-18 max-w-screen flex py-4 px-8 justify-between items-center max-h-screen sticky top-0  ${orbitron.className} z-10`}
+        className={`bg-[#003566] h-16 max-w-screen flex py-4 px-8 justify-between items-center max-h-screen sticky top-0  ${orbitron.className} z-10`}
       >
-        <div className="flex gap-3 items-center justify-center cursor-pointer">
-          <h2 className="text-white tracking-[.3em]">NAZAL IQBAL</h2>
+        <div className="flex gap-3 items-center justify-center cursor-pointer text-xs md:text-sm">
+          <h5 className="text-gray-300 tracking-[.3em] ">NAZAL IQBAL</h5>
           <div className="spinner">
             <span></span>
             <span></span>
@@ -70,28 +79,59 @@ export default function Home() {
           {menuItems.map((item) => (
             <li
               key={item.id}
-              className="relative before:content-[''] before:absolute before:block before:w-full before:h-[2px] 
+              className="relative before:content-[''] before:absolute before:block before:w-full before:h-[1.5px] 
     before:bottom-0 before:left-0 before:bg-white
     before:hover:scale-x-100 before:scale-x-0 before:origin-top-left
-    before:transition before:ease-in-out before:duration-300"
+    before:transition before:ease-in-out before:duration-300 hidden md:block"
             >
               <Link href={item.href}>
                 <span>{item.text}</span>
               </Link>
             </li>
           ))}
+
+          <li className="block md:hidden">
+            <input
+              hidden
+              className="check-icon"
+              id="check-icon"
+              name="check-icon"
+              type="checkbox"
+              onClick={handleClick}
+            />
+            <label className="icon-menu" htmlFor="check-icon">
+              <div className="bar bar--1"></div>
+              <div className="bar bar--2"></div>
+              <div className="bar bar--3"></div>
+            </label>
+          </li>
         </ul>
       </nav>
-      <main className="p-24 scroll-smooth bg-[#0a0908] text-white">
+      {isOpen && (
+        <div className="bg-black fixed top-16 left-0 right-0 p-4 block md:hidden z-50">
+          <ul className="text-white flex flex-col gap-4 justify-center cursor-pointer text-sm tracking-wider text-center">
+            {menuItems.map((item) => (
+              <li key={item.id} className="hover:scale-105">
+                <Link href={item.href}>
+                  <span>{item.text}</span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+      <main className="p-6 md:p-24 scroll-smooth bg-white text-black">
         <section className="text-lg">
-          <div className="space-y-2 mb-14">
-            <p className="text-2xl font-poppins">Hi, I am</p>
-            <h1 className="text-6xl font-semibold">Nazal Mohammed Iqbal</h1>
-            <p className="text-[#adb5bd]">FULL STACK WEB DEVELOPER</p>
+          <div className="space-y-2 mb-10 md:mb-14">
+            <p className="text-xl md:text-2xl font-poppins">Hi, I am</p>
+            <h1 className="text-3xl md:text-5xl font-semibold">
+              Nazal Mohammed Iqbal
+            </h1>
+            <p>FRONT END WEB DEVELOPER</p>
           </div>
           <div className="space-y-8 mb-12">
-            <h2 className="text-3xl">
-              I like to craft frontend products with great user experience.
+            <h2 className="text-xl md:text-2xl">
+              I like to craft frontend products with great user experience!
             </h2>
             <p className="text-lg">
               Passionate about turning ideas into reality, I leverage my skills
@@ -103,20 +143,20 @@ export default function Home() {
 
           <Link
             href="https://drive.google.com/file/d/13yhNBQF9Ke-oK9Q0bcBdP0T8jsjnk5Q0/view?usp=sharing"
-            className="bg-white flex text-base gap-2 p-2 rounded-md items-center text-black opacity-75 hover:scale-105 w-1/6 justify-center"
+            className="bg-[#003566] flex min-w-max text-sm md:text-base gap-2 p-2 rounded-md items-center text-white opacity-75 hover:scale-105 w-1/6 justify-center hover:ease-in duration-200"
           >
-            <span>Check out my Resume</span>
+            <span>Check out my Resume!</span>
           </Link>
         </section>
 
         {/* About Section */}
 
         <section id="about" className=" pt-28">
-          <h1 className="text-center text-5xl" id="headings">
+          <h1 className=" text-center text-5xl" id="headings">
             About Me
           </h1>
-          <div className="flex justify-around mt-16 items-center text-2xl">
-            <div className="w-3/5">
+          <div className="flex flex-col-reverse md:flex-row gap-4 justify-around mt-16 items-center text-xl">
+            <div className="text-lg md:w-3/5">
               <h3>
                 Hello! My name is Nazal Mohammed Iqbal. I completed my college
                 education at PA College of Engineering, specializing in Computer
@@ -138,7 +178,7 @@ export default function Home() {
                 width={400}
                 height={400}
                 alt="My pic"
-                className="rounded-md"
+                className="rounded-full"
               />
             </div>
           </div>
@@ -147,38 +187,36 @@ export default function Home() {
           <h1 className="text-center text-5xl" id="headings">
             My Projects
           </h1>
-          <div className="flex flex-wrap gap-6 mt-16">
+          <div className="flex flex-wrap justify-around gap-14 mt-16">
             {cardData.map((card) => (
-              <div key={card.id} className="card">
-                <div
-                  className="max-w-sm rounded-lg bg-white p-6 shadow-lg  w-full h-full bg-cover flex items-center justify-center relative"
-                  style={{
-                    backgroundImage: `url('${card.backgroundImage}')`,
-                    position: "relative",
-                  }}
-                >
-                  <div
-                    className="absolute inset-0 blur"
-                    style={{
-                      backdropFilter: "blur(5px)",
-                      zIndex: 1,
-                    }}
-                  ></div>
-                  <h5 className="z-10 mb-2 text-xl font-bold leading-tight text-cyan-600">
+              <div
+                key={card.id}
+                className="relative flex w-full md:w-72 flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-md hover:scale-105 ease-out duration-200 "
+              >
+                <div className="relative mx-4 -mt-6 h-40 overflow-hidden rounded-xl bg-blue-gray-500 bg-clip-border text-white shadow-lg shadow-blue-gray-500/40">
+                  <Image
+                    src={card.backgroundImage}
+                    alt=""
+                    width={100}
+                    height={100}
+                    className="w-full h-full"
+                  />
+                </div>
+                <div className="p-6">
+                  <h5 className="mb-2  text-xl font-semibold  tracking-normal">
                     {card.title}
                   </h5>
+                  <p>{card.description}</p>
                 </div>
-
-                <div className="card__content">
-                  <p className="card__title">{card.title}</p>
-                  <div className="card__description flex flex-col gap-4">
-                    <div>{card.description}</div>
-                    <div className="bg-green-400 flex p-2 items-center justify-center">
-                      <Link href={card.demoLink} className="hover:underline">
-                        See Demo
-                      </Link>
-                    </div>
-                  </div>
+                <div className="p-6 pt-0">
+                  <Link
+                    href={card.demoLink}
+                    data-ripple-light="true"
+                    type="Link"
+                    className="rounded-lg bg-[#003566] py-3 px-6 text-center align-middle text-xs font-bold uppercase text-white shadow-md shadow-blue-500/20 transition-all hover:shadow-lg hover:shadow-blue-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+                  >
+                    Preview
+                  </Link>
                 </div>
               </div>
             ))}
@@ -188,21 +226,26 @@ export default function Home() {
           <h1 className="text-center text-5xl" id="headings">
             Contacts
           </h1>
-          <div className="mt-16 flex justify-around">
-            <div className="space-y-8">
-              <h1 className="text-3xl">You can contact me at</h1>
-              <div className="flex gap-3">
-                <Phone />
-                +91 6282810365
+          <div className="mt-16 flex flex-col items-center gap-8 md:flex-row justify-around ">
+            <div className="space-y-8 md:w-1/2 w-full">
+              <h1 className="text-3xl text-center md:text-left ">
+                You can contact me at
+              </h1>
+              <div className="flex justify-around md:flex-col md:gap-4">
+                <div className="flex gap-3 ">
+                  <Phone />
+                  +91 6282810365
+                </div>
+                <Link
+                  className="flex gap-3"
+                  href="mailto:nazaliqbal786@gmail.com"
+                >
+                  <Mail />
+                  nazaliqbal786@gmail.com
+                </Link>
               </div>
-              <Link
-                className="flex gap-3"
-                href="mailto:nazaliqbal786@gmail.com"
-              >
-                <Mail />
-                nazaliqbal786@gmail.com
-              </Link>
             </div>
+
             <div className="main">
               <div className="up">
                 <Link className="card1" href=" https://wa.me/6282810365">

@@ -2,55 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-
-body::-webkit-scrollbar {
-  width: 8px; /* width of the entire scrollbar */
-}
-
-body::-webkit-scrollbar-track {
-  background: transparent; /* color of the track */
-  padding-inline: 10px;
-}
-
-body::-webkit-scrollbar-thumb {
-  background-color: #6b7280; /* color of the scroll thumb */
-  border-radius: 6px; /* roundness of the scroll thumb */
-  border: 3px solid transparent; /* creates padding around scroll thumb */
-}
-
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
 }
 
+*{
+    -ms-overflow-style: none;
+}
+::-webkit-scrollbar {
+    display: none;
+}
+
 .spinner {
   position: relative;
-  width: 60px;
-  height: 60px;
+  width: 30px;
+  height: 30px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -61,11 +29,16 @@ body::-webkit-scrollbar-thumb {
   position: absolute;
   top: 50%;
   left: var(--left);
-  width: 20px;
+  width: 15px;
   height: 7px;
   background: #ffff;
   animation: dominos 1s ease infinite;
   box-shadow: 2px 2px 3px 0px black;
+}
+@media (min-width: 769px) {
+  .spinner span {
+    width: 20px;
+  }
 }
 
 .spinner span:nth-child(1) {
@@ -313,3 +286,62 @@ body::-webkit-scrollbar-thumb {
 .card4:hover .instagram {
   fill: white;
 }
+
+.icon-menu {
+  --gap: 4px;
+  --height-bar: 2px;
+  --pos-y-bar-one: 0;
+  --pos-y-bar-three: 0;
+  --scale-bar: 1;
+  --rotate-bar-one: 0;
+  --rotate-bar-three: 0;
+  width: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+  cursor: pointer;
+  position: relative;
+}
+
+.bar {
+  position: relative;
+  height: var(--height-bar);
+  width: 100%;
+  border-radius: .5rem;
+  background-color: whitesmoke;
+}
+
+.bar--1 {
+  top: var(--pos-y-bar-one);
+  transform: rotate(var(--rotate-bar-one));
+  transition: top 200ms 100ms, transform 100ms;
+}
+
+.bar--2 {
+  transform: scaleX(var(--scale-bar));
+  transition: transform 150ms 100ms;
+}
+
+.bar--3 {
+  bottom: var(--pos-y-bar-three);
+  transform: rotate(var(--rotate-bar-three));
+  transition: bottom 200ms 100ms, transform 100ms;
+}
+
+.check-icon:checked + .icon-menu > .bar--1 {
+  transition: top 200ms, transform 200ms 100ms;
+}
+
+.check-icon:checked + .icon-menu > .bar--3 {
+  transition: bottom 200ms, transform 200ms 100ms;
+}
+
+.check-icon:checked + .icon-menu {
+  --pos-y-bar-one: calc(var(--gap) + var(--height-bar));
+  --pos-y-bar-three: calc(var(--gap) + var(--height-bar));
+  --scale-bar: 0;
+  --rotate-bar-one: 45deg;
+  --rotate-bar-three: -45deg;
+}
+
+
